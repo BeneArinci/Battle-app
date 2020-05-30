@@ -1,8 +1,8 @@
 <h1> Lets Battle </h1>
 
-<h2> <%= @player_1 %> vs. <%= @player_2 %> </h1>
+<h2> <%= @game.player_1.name %> vs. <%= @game.player_2.name %> </h2>
 <div>
-<p> <%= @player_2 %>: 100 HP </p>
+<p> <%= @game.player_2.name %>: <%= @game.player_2.hp %> HP </p>
 
 <form action="/attack">
 <p> <input type="submit" value="Attack"> </p>
