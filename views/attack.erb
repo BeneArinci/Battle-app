@@ -1,3 +1,9 @@
+<% if @game.current_turn == @game.player_1 %>
  <h1> <%= @game.player_1.name %> attacked <%= @game.player_2.name %> </h1>
-
- <h1> <%= @game.player_2.name %> HP = <%= @game.player_2.hp %> </h1>
+<% else %>
+<h1> <%= @game.player_2.name %> attacked <%= @game.player_1.name %> </h1>
+<% end %>
+ <!-- <h1> <%= @game.player_2.name %> HP = <%= @game.player_2.hp %> </h1> -->
+<form action="/switch-turns" method="post">
+  <p> <input type="submit" value="OK"> </p>
+</form>
