@@ -27,6 +27,16 @@ feature 'be attacked by Player 2' do
     click_button 'Attack'
     expect(page).to have_content ("Sophie attacked Bene")
   end
+
+  scenario 'reduce Player 1 HP by 10' do
+    sign_in_process
+    click_button 'Attack'
+    click_button 'OK'
+    click_button 'Attack'
+    click_button 'OK'
+    expect(page).not_to have_content 'Bene: 100HP'
+    expect(page).to have_content 'Bene: 90 HP'
+  end
 end
 # feature 'Allow player1 to attack player 2 and reduce their hp' do
 #   scenario 'reduces hit points' do
